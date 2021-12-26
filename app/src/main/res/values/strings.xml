@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">My ApplicationRecyclerView</string>
+    <string name="app_name">RecycleViewMotion</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="post_card_transition_name">post_card_%1$s</string>
+    <string name="post_card_detail_transition_name">post_card_detail</string>
+
+
+
 </resources>

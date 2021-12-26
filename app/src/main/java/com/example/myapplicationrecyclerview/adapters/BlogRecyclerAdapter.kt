@@ -1,4 +1,4 @@
-package com.example.myapplicationrecyclerview
+package com.example.myapplicationrecyclerview.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,16 +6,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.myapplicationrecyclerview.R
 import com.example.myapplicationrecyclerview.databinding.LayoutBlogListItemBinding
 import com.example.myapplicationrecyclerview.models.BlogPost
 import kotlin.collections.ArrayList
 
 class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val TAG: String = "AppDebug"
 
     private var items: List<BlogPost> = ArrayList()
+    private lateinit var listener: OnItemClickListener
 
+    interface OnItemClickListener {
+        fun onItemClick(item: BlogPost)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return BlogViewHolder(
@@ -27,7 +31,9 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is BlogViewHolder -> {
-                holder.bind(items[position])
+                holder.bind(items[position],listener)
+             //   holder.bind(items[position])
+
             }
         }
     }
@@ -40,7 +46,14 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         items = blogList
     }
 
-    class BlogViewHolder
+    fun submitItemListener(lis: OnItemClickListener) {
+        listener = lis
+    }
+
+
+
+
+    open class BlogViewHolder
     constructor(
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
@@ -51,8 +64,9 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val blogAuthor = binding.blogAuthor
         val blogBody = binding.blogBody
 
+
         // taking each individual BlogPost object and bind it to the views in a layout
-        fun bind(blogPost: BlogPost) {
+        fun bind(blogPost: BlogPost , listener: OnItemClickListener) {
             blogTitle.text = blogPost.title
             blogAuthor.text = blogPost.userName
             blogBody.text = blogPost.body
@@ -67,6 +81,10 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .load(blogPost.image)
                 .into(blogImage)
 
+            //
+            itemView.setOnClickListener {
+                listener.onItemClick(blogPost)
+            }
 
         }
     }
