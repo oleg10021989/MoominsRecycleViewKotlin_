@@ -1,6 +1,5 @@
 package com.example.myapplicationrecyclerview.models
 
-import java.io.Serializable
 
 
 data class BlogPost  (
@@ -10,6 +9,6 @@ data class BlogPost  (
     var image: String,
     var userName: String
 
-) :Serializable{
+) {
 
 }

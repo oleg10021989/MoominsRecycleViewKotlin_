@@ -1,5 +1,6 @@
 package com.example.myapplicationrecyclerview.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,27 +12,32 @@ import com.example.myapplicationrecyclerview.databinding.LayoutBlogListItemBindi
 import com.example.myapplicationrecyclerview.models.BlogPost
 import kotlin.collections.ArrayList
 
-class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class BlogRecyclerAdapter (
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
     private var items: List<BlogPost> = ArrayList()
-    private lateinit var listener: OnItemClickListener
 
     interface OnItemClickListener {
-        fun onItemClick(item: BlogPost)
+        fun onItemClick(view: View , item: BlogPost)
     }
-
+//
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return BlogViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.layout_blog_list_item, parent, false)
+            LayoutBlogListItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            ),
+            listener
         )
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is BlogViewHolder -> {
-                holder.bind(items[position],listener)
+                holder.bind(items[position])
              //   holder.bind(items[position])
 
             }
@@ -46,18 +52,24 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         items = blogList
     }
 
-    fun submitItemListener(lis: OnItemClickListener) {
-        listener = lis
-    }
+//    fun submitItemListener(lis: OnItemClickListener) {
+//        listener = lis
+//    }
 
 
 
 
     open class BlogViewHolder
     constructor(
-        itemView: View
-    ) : RecyclerView.ViewHolder(itemView) {
-        private val binding = LayoutBlogListItemBinding.bind(itemView)
+        private val binding: LayoutBlogListItemBinding, listener: OnItemClickListener
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+
+        init {
+            binding.run {
+                this.listener = listener
+            }
+        }
 
         val blogImage = binding.blogImage
         val blogTitle = binding.blogTitle
@@ -66,7 +78,9 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
 
         // taking each individual BlogPost object and bind it to the views in a layout
-        fun bind(blogPost: BlogPost , listener: OnItemClickListener) {
+        fun bind(blogPost: BlogPost) {
+            binding.blogPost = blogPost
+            Log.d("check1", "bind")
             blogTitle.text = blogPost.title
             blogAuthor.text = blogPost.userName
             blogBody.text = blogPost.body
@@ -82,9 +96,9 @@ class BlogRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 .into(blogImage)
 
             //
-            itemView.setOnClickListener {
-                listener.onItemClick(blogPost)
-            }
+//            itemView.setOnClickListener {
+//                listener.onItemClick(blogPost)
+//            }
 
         }
     }

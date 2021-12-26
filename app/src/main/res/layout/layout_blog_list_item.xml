@@ -1,83 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout     xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UnusedAttribute">
 
     <data>
+
         <variable
             name="blogPost"
             type="com.example.myapplicationrecyclerview.models.BlogPost" />
+        <variable
+            name="listener"
+            type="com.example.myapplicationrecyclerview.adapters.BlogRecyclerAdapter.OnItemClickListener" />
     </data>
 
-<com.google.android.material.card.MaterialCardView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
-    android:padding="20dp"
-    android:clickable="true"
-    android:focusable="true"
-    android:layout_margin="10dp"
-    app:cardElevation="10dp"
-    app:cardPreventCornerOverlap="false"
-    android:transitionName="@{@string/post_card_transition_name(blogPost.id)}">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="20dp"
+        android:onClick="@{(view) -> listener.onItemClick(view, blogPost)}"
+        android:transitionName="@{@string/post_card_transition_name(blogPost.id)}"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="false">
 
-        <ImageView
-            android:id="@+id/blog_image"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="0dp"
-            android:adjustViewBounds="true"
-            android:padding="0dp"
-            android:scaleType="fitXY"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/blog_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="0dp"
+                android:adjustViewBounds="true"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        <LinearLayout
-            android:id="@+id/container1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/blog_image">
-
-            <TextView
-                android:id="@+id/blog_title"
+            <LinearLayout
+                android:id="@+id/container1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="The Title of a Blog"
-                android:textColor="#000"
-                android:textSize="19sp" />
-            <TextView
-                android:id="@+id/blog_body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="The Title of a Blog"
-                android:textColor="#000"
-                android:textSize="15sp" />
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/blog_image">
 
-            <TextView
-                android:id="@+id/blog_author"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Mitch Tabian"
-                android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/blog_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Title of a Blog"
+                    android:textColor="#000"
+                    android:textSize="19sp" />
+
+                <TextView
+                    android:id="@+id/blog_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Title of a Blog"
+                    android:textColor="#000"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/blog_author"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Mitch Tabian"
+                    android:textSize="15sp" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</com.google.android.material.card.MaterialCardView></layout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
