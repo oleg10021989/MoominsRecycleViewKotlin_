@@ -5,7 +5,6 @@
     tools:ignore="UnusedAttribute">
 
     <data>
-
         <variable
             name="blogPost"
             type="com.example.myapplicationrecyclerview.models.BlogPost" />

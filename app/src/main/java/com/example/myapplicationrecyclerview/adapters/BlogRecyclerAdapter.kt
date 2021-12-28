@@ -80,20 +80,23 @@ class BlogRecyclerAdapter (
         // taking each individual BlogPost object and bind it to the views in a layout
         fun bind(blogPost: BlogPost) {
             binding.blogPost = blogPost
-            Log.d("check1", "bind")
+
             blogTitle.text = blogPost.title
             blogAuthor.text = blogPost.userName
             blogBody.text = blogPost.body
 
             //default properties to Glide  - what to display if there is an error or the image cannot be displayed
             val requestOptions = RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
+                .placeholder(R.drawable.white_background)
+                .error(R.drawable.white_background)
 
             Glide.with(blogAuthor.context)
                 .setDefaultRequestOptions(requestOptions)
                 .load(blogPost.image)
                 .into(blogImage)
+
+
+
 
             //
 //            itemView.setOnClickListener {
