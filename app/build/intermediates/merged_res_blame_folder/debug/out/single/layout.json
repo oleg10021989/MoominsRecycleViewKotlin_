@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_post.xml",
+        "source": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\src\\main\\res\\layout\\fragment_post.xml"
+    },
+    {
+        "merged": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\layout_blog_list_item.xml",
+        "source": "C:\\Users\\oleg1\\AndroidStudioProjects\\RecyclerViewKotlin\\app\\src\\main\\res\\layout\\layout_blog_list_item.xml"
+    }
+]

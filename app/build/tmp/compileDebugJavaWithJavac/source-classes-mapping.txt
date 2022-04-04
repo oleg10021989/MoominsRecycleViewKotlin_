@@ -1,0 +1,31 @@
+com/example/myapplicationrecyclerview/DataBindingTriggerClass.java
+ com.example.myapplicationrecyclerview.DataBindingTriggerClass
+com/example/myapplicationrecyclerview/generated/callback/OnClickListener.java
+ com.example.myapplicationrecyclerview.generated.callback.OnClickListener
+ com.example.myapplicationrecyclerview.generated.callback.OnClickListener$Listener
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+com/example/myapplicationrecyclerview/DataBinderMapperImpl.java
+ com.example.myapplicationrecyclerview.DataBinderMapperImpl
+ com.example.myapplicationrecyclerview.DataBinderMapperImpl$InnerBrLookup
+ com.example.myapplicationrecyclerview.DataBinderMapperImpl$InnerLayoutIdLookup
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+com/example/myapplicationrecyclerview/databinding/FragmentPostBinding.java
+ com.example.myapplicationrecyclerview.databinding.FragmentPostBinding
+com/example/myapplicationrecyclerview/databinding/FragmentPostBindingImpl.java
+ com.example.myapplicationrecyclerview.databinding.FragmentPostBindingImpl
+com/example/myapplicationrecyclerview/databinding/LayoutBlogListItemBinding.java
+ com.example.myapplicationrecyclerview.databinding.LayoutBlogListItemBinding
+com/example/myapplicationrecyclerview/databinding/LayoutBlogListItemBindingImpl.java
+ com.example.myapplicationrecyclerview.databinding.LayoutBlogListItemBindingImpl
+com/example/myapplicationrecyclerview/BuildConfig.java
+ com.example.myapplicationrecyclerview.BuildConfig
+com/example/myapplicationrecyclerview/BR.java
+ com.example.myapplicationrecyclerview.BR
+com/example/myapplicationrecyclerview/databinding/ActivityMainBinding.java
+ com.example.myapplicationrecyclerview.databinding.ActivityMainBinding
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
+com/example/myapplicationrecyclerview/databinding/FragmentHomeBinding.java
+ com.example.myapplicationrecyclerview.databinding.FragmentHomeBinding
