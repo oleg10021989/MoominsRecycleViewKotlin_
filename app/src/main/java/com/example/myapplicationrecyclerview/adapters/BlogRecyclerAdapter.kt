@@ -11,6 +11,11 @@ import com.example.myapplicationrecyclerview.R
 import com.example.myapplicationrecyclerview.databinding.LayoutBlogListItemBinding
 import com.example.myapplicationrecyclerview.models.BlogPost
 import kotlin.collections.ArrayList
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.myapplicationrecyclerview.databinding.ActivityMainBinding
+
 
 class BlogRecyclerAdapter (
     private val listener: OnItemClickListener
@@ -52,9 +57,6 @@ class BlogRecyclerAdapter (
         items = blogList
     }
 
-//    fun submitItemListener(lis: OnItemClickListener) {
-//        listener = lis
-//    }
 
 
 

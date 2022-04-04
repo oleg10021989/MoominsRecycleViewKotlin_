@@ -19,16 +19,18 @@
         android:layout_margin="10dp"
         android:clickable="true"
         android:focusable="true"
-        android:padding="20dp"
         android:onClick="@{(view) -> listener.onItemClick(view, blogPost)}"
+        android:padding="20dp"
         android:transitionName="@{@string/post_card_transition_name(blogPost.id)}"
+        app:cardBackgroundColor="#4CAF50"
         app:cardCornerRadius="10dp"
         app:cardElevation="10dp"
         app:cardPreventCornerOverlap="false">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#4CAF50">
 
             <ImageView
                 android:id="@+id/blog_image"
